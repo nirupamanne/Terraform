@@ -1,10 +1,10 @@
-# Roboshop Infrastructure – Terraform Project
+🛒 RoboShop Infrastructure - Complete E-commerce Platform
 
 ## 1. Project Overview
 
 In this project, we use Terraform to create AWS infrastructure for the Roboshop application.
 
-We create networking, security groups, Bastion Host and database servers using Terraform.
+RoboShop is a production-ready, multi-tier e-commerce application infrastructure built with Terraform following AWS best practices. The architecture implements proper separation of concerns, security boundaries, and automated configuration management.
 
 ## 2. VPC
 
