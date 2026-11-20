@@ -6,33 +6,11 @@ In this project, we use Terraform to create AWS infrastructure for the Roboshop 
 
 RoboShop is a production-ready, multi-tier e-commerce application infrastructure built with Terraform following AWS best practices. The architecture implements proper separation of concerns, security boundaries, and automated configuration management.
 
-## 🏗️ Architecture Overview
+## 🏗️ Roboshop AWS Architecture Using Terraform
+## Architecture Diagram
 
-┌─────────────────────────────────────────────────────────────┐
-│                    INTERNET GATEWAY                         │
-└─────────────────────┬───────────────────────────────────────┘
-                      │
-┌─────────────────────▼───────────────────────────────────────┐
-│                PUBLIC SUBNET (10.0.1.0/24)                 │
-│  ├── 🏰 Bastion Host (SSH Jump Server)                     │
-│  ├── 🔐 VPN Server (OpenVPN)                               │
-│  └── 🌐 NAT Gateway (Outbound Internet)                    │
-└─────────────────────┬───────────────────────────────────────┘
-                      │
-┌─────────────────────▼───────────────────────────────────────┐
-│               PRIVATE SUBNET (10.0.11.0/24)                │
-│  ├── ⚖️ Backend Application Load Balancer                  │
-│  ├── 🚀 Application Servers (Future)                       │
-│  └── 📊 Service Discovery                                  │
-└─────────────────────┬───────────────────────────────────────┘
-                      │
-┌─────────────────────▼───────────────────────────────────────┐
-│              DATABASE SUBNET (10.0.21.0/24)                │
-│  ├── 🗄️ MongoDB (Document Database)                        │
-│  ├── ⚡ Redis (Cache Layer)                                │
-│  ├── 🐬 MySQL (Relational Database)                        │
-│  └── 🐰 RabbitMQ (Message Queue)                           │
-└─────────────────────────────────────────────────────────────┘
+![Roboshop AWS Architecture](https://raw.githubusercontent.com/nirupamanne/Terraform/main/terraform-roboshop-project/Roboshop%20AWS%20Architecture%20with%20Terraform.png)
+
 ## 2. VPC
 
 VPC is a private network in AWS. We create a VPC to keep all our application resources in one network.
