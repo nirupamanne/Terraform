@@ -1,4 +1,4 @@
-## 🛒 RoboShop Infrastructure - Complete E-commerce Platform
+# 🛒 RoboShop Infrastructure - Complete E-commerce Platform
 
 ## 1. Project Overview
 
