@@ -26,7 +26,7 @@ resource "terraform_data" "bootstrap" {
   provisioner "remote-exec" {
     inline = [
       "chmod +x /tmp/bootstrap.sh",
-      "sudo sh /tmp/bootstrap.sh"
+      "sudo sh /tmp/bootstrap.sh mongodb ${var.environment}"
     ]
   }
 }
@@ -67,6 +67,20 @@ resource "terraform_data" "redis" {
       "sudo sh /tmp/bootstrap.sh redis ${var.environment}"
     ]
   }
+}
+
+resource "aws_instance" "mysql" {
+  ami           = local.ami_id
+  instance_type = "t3.micro"
+  subnet_id     = local.database_subnet_id
+  vpc_security_group_ids = [local.mysql_sg_id]
+  iam_instance_profile = aws_iam_instance_profile.mysql.name
+  tags = merge(
+    local.common_tags,
+    {
+      Name = "${var.project}-${var.environment}-mysql"
+    }
+  )
 }
 
 resource "terraform_data" "mysql" {
