@@ -12,12 +12,12 @@
 # shipping_db_user: "{{ vault_shipping_db_user }}"
 # shipping_db_password: "{{ vault_shipping_db_password }}"
 
-mongodb_host: mongodb.nirupadevops.online
-redis_host: redis.nirupadevops.online
-mysql_host: mysql.nirupadevops.online
-rabbitmq_host: rabbitmq.nirupadevops.online
-catalogue_host: catalogue.nirupadevops.online
-user_host: user.nirupadevops.online
-cart_host: cart.nirupadevops.online
-shipping_host: shipping.nirupadevops.online
-payment_host: payment.nirupadevops.online
+mongodb_host: mongodb-{{ env }}.nirupadevops.online
+redis_host: redis-{{ env }}.nirupadevops.online
+mysql_host: mysql-{{ env }}.nirupadevops.online
+rabbitmq_host: rabbitmq-{{ env }}.nirupadevops.online
+catalogue_host: catalogue-{{ env }}.nirupadevops.online
+user_host: user-{{ env }}.nirupadevops.online
+cart_host: cart-{{ env }}.nirupadevops.online
+shipping_host: shipping-{{ env }}.nirupadevops.online
+payment_host: payment-{{ env }}.nirupadevops.online

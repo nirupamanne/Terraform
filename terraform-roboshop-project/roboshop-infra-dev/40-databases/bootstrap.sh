@@ -2,7 +2,9 @@
 
 dnf install ansible -y
 cd /home/ec2-user
-git clone https://github.com/daws-92s/roboshop-ansible-v3.git
-cd roboshop-ansible-v3
+#git clone https://github.com/daws-92s/roboshop-ansible-v3.git
+git sparse-checkout set terraform-roboshop-project/roboshop-infra-dev/roboshop-ansible-v3
+#cd roboshop-ansible-v3
+cd terraform-roboshop-project/roboshop-infra-dev/roboshop-ansible-v3
 git pull # when you are running for 2nd time, if there is any change in repo we can pull the changes
-ansible-playbook -e component=mongodb main.yaml
+ansible-playbook -e component=mongodb -e env=dev main.yaml
