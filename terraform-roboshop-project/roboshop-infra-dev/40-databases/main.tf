@@ -46,7 +46,7 @@ resource "aws_instance" "redis" {
 
 resource "terraform_data" "redis" {
   triggers_replace = [
-    aws_instance.mongodb.id
+    aws_instance.redis.id
   ]
 
   connection {
@@ -58,7 +58,7 @@ resource "terraform_data" "redis" {
 
   provisioner "file" {
     source      = "${path.module}/bootstrap.sh"
-    destination = "/tmp/bootstrap.sh "
+    destination = "/tmp/bootstrap.sh"
   }
 
   provisioner "remote-exec" {
